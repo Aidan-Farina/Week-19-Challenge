@@ -14,6 +14,7 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
+  try {
   console.log('Post to the database');
 
   const jateDb = await openDB('jate', 1);
@@ -27,10 +28,14 @@ export const putDb = async (content) => {
   const result = await request;
   console.log('Data saved to the database', result);
   return result;
+  } catch (error) {
+    console.log('Error saving to the database', error);
+  }
 };
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
+  try {
   console.log('Get from the database');
 
   const jateDb = await openDB('jate', 1);
@@ -44,6 +49,9 @@ export const getDb = async () => {
   const result = await request;
   console.log('Data retrieved from the database', result);
   return result;
-}
+  } catch (error) {
+    console.log('Error retrieving from the database', error);
+  }
+};
 
 initdb();
