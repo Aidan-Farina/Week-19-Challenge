@@ -26,10 +26,9 @@ export const putDb = async (content) => {
   const request = store.put({ content: content });
 
   const result = await request;
-  console.log('Data saved to the database', result);
-  return result;
-  } catch (error) {
-    console.log('Error saving to the database', error);
+  console.log('Data saved to the database', result);} 
+  catch {
+    console.error('Error with putDb');
   }
 };
 
@@ -47,10 +46,9 @@ export const getDb = async () => {
   const request = store.getAll();
 
   const result = await request;
-  console.log('Data retrieved from the database', result);
-  return result;
-  } catch (error) {
-    console.log('Error retrieving from the database', error);
+  console.log('Data saved to the database', result);} 
+  catch {
+    console.error('Error with getDb');
   }
 };
 
